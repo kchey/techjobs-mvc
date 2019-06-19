@@ -23,5 +23,13 @@ public class SearchController {
     }
 
     // TODO #1 - Create handler to process search request and display results
+    @RequestMapping(value="results")
+    public void search(@RequestParam String searchTerm){
 
+
+        //or Getmapping
+    }
 }
+
+//
+//search "term" and "type"
