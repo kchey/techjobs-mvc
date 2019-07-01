@@ -12,13 +12,17 @@
 
     <!-- TODO #3 - Use the same list display from search.html -->
 
-    <div class="container body-content">
-        <p>View jobs by:</p>
-        <ul>
-            <li th:each="action : ${actions}">
-                <a th:href="@{'/' + ${action.key}}" th:text="${action.value}"></a>
-            </li>
-        </ul>
+    <div th:if="${jobs}">
+        <h3 th:text="${jobs.size()} + ' Result(s)'"></h3>
+
+        <table class="job-listing" th:each="job: ${jobs}">
+            <tr th:each="line: ${job}">
+                <td th:text="${line.key}"></td>
+                <td th:text="${line.value}"></td>
+            </tr>
+        </table>
+    </div>
+
 </div>
 
 </body>
